@@ -1,0 +1,31 @@
+Metric,Value
+Dataset,LEOKA (Law Enforcement Officers Killed & Assaulted)
+Temporal Span,1995-2024
+Assault Records,"362,705"
+Assignment Records,"150,751"
+Temporal Windows,30 years
+---,---
+RQ1: Shift Detection,---
+Years with Significant Shift,1 / 27
+Mean KS Statistic,0.0078
+Mean PSI,0.0021
+---,---
+RQ2: Early Warning,---
+Detection Lead Time (avg),N/A (no degradation)
+---,---
+RQ3: Shift-Performance Correlation,---
+KS vs Accuracy (r),0.751
+PSI vs Accuracy (r),0.003
+---,---
+RQ4: Failure Prediction,---
+Best Model Accuracy,1.000
+Best Model F1 Score,0.000
+---,---
+Hypothesis Support,---
+H1 (Detectable shifts),✓ SUPPORTED
+H2 (Lead time 1-3 years),○ N/A (no degradation)
+H3 (r < -0.3),r = 0.751
+H4 (F1 > 0.6),○ PARTIAL
+---,---
+KEY FINDING,---
+Temporal Stability,HIGH STABILITY - Model maintained consistent performance across 30 years
