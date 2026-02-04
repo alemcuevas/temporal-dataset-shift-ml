@@ -1,0 +1,27 @@
+Metric,Value
+Dataset,Crime Type (CT)
+Temporal Span,2012-2024
+Total Records,"250,022"
+Temporal Windows,13 years
+---,---
+RQ1: Shift Detection,---
+Years with Significant Shift,11 / 11
+Mean KS Statistic,0.0692
+Mean PSI,0.0670
+---,---
+RQ2: Early Warning,---
+Detection Lead Time (avg),2.00 years
+---,---
+RQ3: Shift-Performance Correlation,---
+KS vs Accuracy (r),0.556
+PSI vs Accuracy (r),0.303
+---,---
+RQ4: Failure Prediction,---
+Best Model Accuracy,0.889
+Best Model F1 Score,0.889
+---,---
+Hypothesis Support,---
+H1 (Detectable shifts),✓ SUPPORTED
+H2 (Lead time 1-3 years),✓ SUPPORTED
+H3 (r < -0.3),○ PARTIAL
+H4 (F1 > 0.6),✓ SUPPORTED
