@@ -1,43 +1,42 @@
-# Temporal Dataset Shift Detection in Public-Sector ML
+# temporal-dataset-shift-ml
 
-Master's capstone project analyzing temporal dataset shift in public-sector crime data.
+Capstone project for my Master's degree. Looking at how ML models degrade over time when the underlying data distribution changes — specifically using FBI crime datasets.
 
-## Research Questions
+## what this is about
 
-1. How can temporal dataset shift be statistically detected in public-sector time-series data?
-2. Which detection methods provide the earliest warning signals prior to model degradation?
-3. What is the relationship between shift metrics and ML model performance loss?
-4. Can shift indicators predict impending model failure?
+ML models don't stay accurate forever. Data drifts, patterns change, and suddenly your model is making predictions based on outdated assumptions. This project explores whether we can detect that shift *before* the model starts failing.
 
-## Datasets
+I'm using two FBI datasets:
+- **Crime Type data (2013-2024)** — ~270k records of crime classifications
+- **LEOKA (1995-2024)** — Law enforcement officer assault data spanning 30 years
 
-- **CT (Crime Type) 2013-2024**: Crime classification data
-- **LEOKA 1995-2024**: Law Enforcement Officers Killed and Assaulted data
+## the questions I'm trying to answer
 
-## Methods
+1. Can we statistically detect when a dataset has shifted enough to matter?
+2. Do some detection methods give us earlier warnings than others?
+3. Is there a relationship between how much the data shifted and how much accuracy drops?
+4. Can we actually predict model failure before it happens?
 
-- Kolmogorov-Smirnov Test
-- Population Stability Index (PSI)
-- Wasserstein Distance
-- Random Forest / Gradient Boosting / Ensemble models
+## approach
 
-## Structure
+For shift detection I'm comparing KS tests, PSI, and Wasserstein distance. Then using RF, gradient boosting, and some ensemble stuff to see if shift metrics can predict when a model is about to tank.
+
+The LEOKA data turned out to be surprisingly stable over 30 years — which is actually an interesting finding on its own.
+
+## repo structure
 
 ```
-├── CT_2013_2024/
-│   ├── CT_2013_2024.csv
-│   └── CT_Analysis.ipynb
-├── LEOKA_1995_2024/
-│   ├── LEOKA_*.csv
-│   └── LEOKA_Analysis.ipynb
+CT_2013_2024/
+  CT_2013_2024.csv
+  CT_Analysis.ipynb
+
+LEOKA_1995_2024/
+  LEOKA_*.csv (multiple files by year range)
+  LEOKA_Analysis.ipynb
 ```
 
-## Requirements
+## running it
 
-- Python 3.8+
-- pandas, numpy, matplotlib, seaborn
-- scikit-learn, scipy
+Need Python 3.8+ with the usual suspects: pandas, numpy, sklearn, scipy, matplotlib, seaborn.
 
-## Usage
-
-Open the Jupyter notebooks in each folder and run all cells.
+Just open the notebooks and run them. Each one is self-contained.
